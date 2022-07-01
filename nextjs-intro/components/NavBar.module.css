@@ -1,0 +1,15 @@
+/* .nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: tomato;
+} */
+
+.link {
+  text-decoration: none;
+}
+/* constant */
+
+.active {
+  color: tomato;
+}
+/* conditional */
