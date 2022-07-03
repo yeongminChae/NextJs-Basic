@@ -1,17 +1,11 @@
 import { useEffect, useState } from "react";
 import Seo from "../components/Seo";
 
-const API_KEY = "3b45f9cc2e4aedf5c5acc1163b12b24c";
-
 export default function Home() {
   const [movies, setMovies] = useState();
   useEffect(() => {
     (async () => {
-      const { results } = await (
-        await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
-        )
-      ).json();
+      const { results } = await (await fetch(`/api/movies`)).json();
       setMovies(results);
     })();
     // async is annominous function , and this function has to be excuted immediately so i called the function with '()'
