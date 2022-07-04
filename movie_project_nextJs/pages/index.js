@@ -5,15 +5,7 @@ import Seo from "../components/Seo";
 export default function Home({ results }) {
   const roueter = useRouter();
   const onClick = (id, title) => {
-    roueter.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          title,
-        },
-      },
-      `/movies/${id}`
-    );
+    roueter.push(`/movies/${title}/${id}`);
   };
   return (
     <div className="container">
@@ -26,16 +18,7 @@ export default function Home({ results }) {
         >
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
           <h4>
-            <Link
-              href={{
-                pathname: `/movies/${movie.id}`,
-                query: {
-                  title: movie.original_title,
-                },
-              }}
-              as={`/movies/${movie.id}`}
-              // as is masking the url in browser -> optional decorator
-            >
+            <Link href={`/movies/${movie.original_title}/${movie.id}`}>
               <a>{movie.original_title}</a>
             </Link>
           </h4>
