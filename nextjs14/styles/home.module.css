@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  max-width: 90%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 화면 크기가 1200px 미만이면 4개의 열로 표시 */
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 화면 크기가 900px 미만이면 3개의 열로 표시 */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 화면 크기가 600px 미만이면 2개의 열로 표시 */
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 화면 크기가 300px 미만이면 1개의 열로 표시 */
+@media (max-width: 300px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
