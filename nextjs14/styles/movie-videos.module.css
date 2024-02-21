@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: chocolate;
+  height: 25vh;
+  position: relative;
+}
+
+.slider {
+  background-color: tomato;
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+}
+
+.loadingBox {
+  background-color: orange;
+  width: 80vw;
+}
+
+.box {
+  background-color: black;
+  display: flex;
+  gap: 1rem;
+}
+
+.container iframe {
+  gap: 0rem;
+}
+
+.container iframe:hover {
+}
+
+.arrowBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 6rem;
+}
+
+.arrow {
+  width: 4.5rem;
+  height: 4.5rem;
+  opacity: 0.8;
+  background-color: red;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
