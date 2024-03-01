@@ -18,16 +18,18 @@ export async function generateMetadata({ params: { id } }: iParams) {
 export default async function MovieDetail({ params: { id } }: iParams) {
   return (
     <div className={styles.container}>
-      <Suspense fallback={<h1>Loading movie info</h1>}>
-        <MovieInfos id={id} />
-      </Suspense>
+      <div className={styles.info}>
+        <Suspense fallback={<h1>Loading movie info</h1>}>
+          <MovieInfos id={id} />
+        </Suspense>
+      </div>
       <div className={styles.videoSet}>
         <h1>Trailers</h1>
         <Suspense fallback={<h1>Loading movie videos</h1>}>
           <MovieVideos id={id} />
         </Suspense>
       </div>
-      <div>
+      <div className={styles.similar}>
         <h1>Similar Movies</h1>
         <Suspense fallback={<h1>Loading movie credits</h1>}>
           <MovieSimilar id={id} />
