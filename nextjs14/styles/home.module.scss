@@ -1,0 +1,53 @@
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+
+@mixin smallDevice {
+  @media screen and (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin mediumDevice {
+  @media screen and (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin largeDevice {
+  @media screen and (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xlDevice {
+  @media screen and (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+.container {
+  display: grid;
+  max-width: 100%;
+  width: 100%;
+  height: fit-content;
+  padding-top: 10rem;
+  padding-bottom: 20rem;
+
+  @include smallDevice() {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @include mediumDevice() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include largeDevice() {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include xlDevice() {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
