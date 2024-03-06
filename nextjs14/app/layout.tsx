@@ -1,6 +1,7 @@
 import "../styles/global.css";
 import { Metadata } from "next";
 import Navigation from "../components/navigation";
+import RecoilRootProvider from "./context/recoil/recoilRootProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <body>
         <Navigation />
-        {children}
+        <RecoilRootProvider>{children}</RecoilRootProvider>
       </body>
     </html>
   );
