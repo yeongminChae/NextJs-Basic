@@ -1,12 +1,26 @@
+"use client";
+
 import styles from "../styles/movie-videos.module.css";
+import { useSetRecoilState } from "recoil";
+import { PageAtom } from "../app/context/recoil/atoms";
 
 interface IArrowDirectionProps {
-  onClick: () => void;
   direction: `left` | `right`;
+  lastPage: number;
 }
 
-const ArrowDirection = ({ onClick, direction }: IArrowDirectionProps) => {
+const ArrowDirection = ({ direction, lastPage }: IArrowDirectionProps) => {
   const isLeft = direction === `left`;
+  const setPageAtom = useSetRecoilState(PageAtom);
+
+  const increasePage = () => {
+    setPageAtom((prev) => (prev === lastPage ? 0 : prev + 1));
+  };
+
+  const decreasePage = () => {
+    setPageAtom((prev) => (prev === 0 ? lastPage : prev - 1));
+  };
+
   return (
     <div className={styles.arrowBox}>
       <svg
@@ -16,7 +30,7 @@ const ArrowDirection = ({ onClick, direction }: IArrowDirectionProps) => {
         strokeWidth={1.5}
         stroke="currentColor"
         className={styles.arrow}
-        onClick={onClick}
+        onClick={isLeft ? decreasePage : increasePage}
       >
         <path
           strokeLinecap="round"
