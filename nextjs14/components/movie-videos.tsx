@@ -10,13 +10,22 @@ async function getVideos(id: string) {
 
 export default async function MovieVideos({ id }: { id: string }) {
   const movieVideos = await getVideos(id);
-  const lastPage = Math.floor(movieVideos.length / 4);
+  const lastPage =
+    movieVideos.length % 4 == 0
+      ? movieVideos.length / 4 - 1
+      : Math.floor(movieVideos.length / 4);
 
   return (
     <div className={styles.container}>
       <ArrowDirection direction="left" lastPage={lastPage} />
-      <Video movieArray={movieVideos} />
+      {movieVideos.length != 0 ? (
+        <Video movieArray={movieVideos} />
+      ) : (
+        <span>Oops No Trailers... 😅</span>
+      )}
       <ArrowDirection direction="right" lastPage={lastPage} />
     </div>
   );
 }
+
+// 671 해리포터
