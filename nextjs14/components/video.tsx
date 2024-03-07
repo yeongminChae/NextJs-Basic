@@ -8,7 +8,10 @@ const Video = ({ movieArray }) => {
 
   return (
     <>
-      {movieArray.slice(page * 4, (page + 1) * 4).map((video) => (
+      {(movieArray.length >= 4
+        ? movieArray.slice(page * 4, (page + 1) * 4)
+        : movieArray
+      ).map((video) => (
         <iframe
           key={video.id}
           src={`https://youtube.com/embed/${video.key}`}
