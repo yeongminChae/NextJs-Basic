@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import MovieCredits from "../../../../../components/movie-credits";
 import { getMovie } from "../../../../../components/movie-infos";
 import { iParams } from "../page";
+import { styled } from "styled-components";
 
 export async function generateMetadata({ params: { id } }: iParams) {
   const movie = await getMovie(id);
