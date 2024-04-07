@@ -1,49 +1,30 @@
 .container {
   display: flex;
   justify-content: space-between;
-  background-color: chocolate;
-  height: 25vh;
-  position: relative;
-}
-
-.slider {
-  background-color: tomato;
-  display: flex;
-  overflow: hidden;
-  flex: 1;
-}
-
-.loadingBox {
-  background-color: orange;
-  width: 80vw;
-}
-
-.box {
-  background-color: black;
-  display: flex;
-  gap: 1rem;
+  min-height: 30vh;
 }
 
 .container iframe {
-  gap: 0rem;
+  border-radius: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .container iframe:hover {
+  opacity: 1.2;
 }
 
 .arrowBox {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  width: 6rem;
+  max-width: 6rem;
 }
 
 .arrow {
   width: 4.5rem;
   height: 4.5rem;
   opacity: 0.8;
-  background-color: red;
 }
 
 .arrow:hover {

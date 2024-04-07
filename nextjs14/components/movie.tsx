@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import styles from "../styles/movie.module.css";
+import styles from "../styles/movie.module.scss";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 

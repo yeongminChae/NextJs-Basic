@@ -40,7 +40,8 @@ const PaginationBox = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  color: red;
+  padding-bottom: 4rem;
+  font-size: 1.5rem;
 `;
 
 const PaginationNum = styled.span<{ $active: boolean }>`
