@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Movie from "../../components/movie";
-import styles from "../../styles/home.module.css";
+import styles from "../../styles/home.module.scss";
 
 export const metadata: Metadata = {
   title: "Home",
