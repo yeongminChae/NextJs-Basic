@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import MovieInfos, { getMovie } from "../../../../components/movie-infos";
 import MovieVideos from "../../../../components/movie-videos";
 import MovieSimilar from "../../../../components/movie-similar";
-import styles from "../../../../styles/movie-page.module.css";
+import styles from "../../../../styles/movie-page.module.scss";
 
 export interface iParams {
   params: { id: string };
@@ -24,13 +24,13 @@ export default async function MovieDetail({ params: { id } }: iParams) {
         </Suspense>
       </div>
       <div className={styles.videoSet}>
-        <h1>Trailers</h1>
+        <h1 className={styles.titles}>Trailers</h1>
         <Suspense fallback={<h1>Loading movie videos</h1>}>
           <MovieVideos id={id} />
         </Suspense>
       </div>
       <div className={styles.similar}>
-        <h1>Similar Movies</h1>
+        <h1 className={styles.titles}>Similar Movies</h1>
         <Suspense fallback={<h1>Loading movie credits</h1>}>
           <MovieSimilar id={id} />
         </Suspense>
